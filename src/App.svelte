@@ -1,6 +1,6 @@
 <script>
-	import Login from "./Components/Login.svelte";
-	import Nav from "./Components/Nav.svelte";
+	import Login from "./components/Login.svelte";
+	import Nav from "./components/Nav.svelte";
 	export let token = '';
 	let login =(name, password)=>
 	{
