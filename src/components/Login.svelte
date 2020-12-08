@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
     import { TextField,Button } from "smelte";
+    import { _ } from '../services/i18n';
+
     export let login;
     let name, password;
-    import { _ } from '../services/i18n';
 </script>
 <div class="grid grid-flow-col grid-cols-12 justify-center text-center">
     <div class="col-start-3 col-span-8">

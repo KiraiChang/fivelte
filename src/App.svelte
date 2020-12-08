@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Login from "./components/Login.svelte";
 	import Nav from "./components/Nav.svelte";
 	export let token = '';
