@@ -1,8 +1,10 @@
 
 <script lang="ts">
     import { List, ListItem, NavigationDrawer } from "smelte";
+    import { fade } from "svelte/transition"
     import { Router, Route, Link } from "svelte-routing";
     import NavLink from "./NavLink.svelte"
+    import Header from "./Header.svelte"
     import Home from "../routes/Home.svelte";
     import About from "../routes/About.svelte";
     import Blog from "../routes/Blog.svelte";
@@ -16,8 +18,12 @@
         { to: "blog", text: 'Blog' },
     ];
 </script>
+
+<Header></Header>
 <Router url="{url}">
-    <nav>
+    <nav class="relative p-8 lg:max-w-3xl mx-auto mb-10 mt-24 md:ml-64 md:pl-16
+  md:max-w-md md:px-3"
+         transition:fade={{ duration: 300 }}>
         <NavigationDrawer showDesktop=true>
             <List items={menu}>
                 <span slot="item" let:item={item} class="cursor-pointer">

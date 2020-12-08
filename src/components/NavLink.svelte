@@ -6,7 +6,6 @@
 
     function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
         isSelected = href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
-        console.log(isSelected);
     }
 </script>
 
