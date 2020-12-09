@@ -17,9 +17,13 @@
         { to: "about", text: 'About' },
         { to: "blog", text: 'Blog' },
     ];
+    export let selected = '';
+    let setupNavSelect=(name)=>{
+        selected = name;
+    }
 </script>
 
-<Header></Header>
+<Header bind:selected={selected}></Header>
 <Router url="{url}">
     <div class="relative p-8 lg:max-w-3xl mx-auto mb-10 mt-24 md:ml-64 md:pl-16
   md:max-w-md md:px-3"
@@ -27,7 +31,7 @@
         <NavigationDrawer showDesktop=true>
             <List items={menu}>
                 <span slot="item" let:item={item} class="cursor-pointer">
-                    <NavLink to="{item.to}" let:isSelected={isSelected}>
+                    <NavLink to="{item.to}" let:isSelected={isSelected} {setupNavSelect}>
                         <ListItem
                                 selected={isSelected}
                                 {...item}
