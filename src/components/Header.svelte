@@ -1,6 +1,6 @@
 <script>
     import {AppBar, Button, Tabs, Spacer, Tooltip, TabButton} from "smelte";
-    import NavLink from "./NavLink.svelte";
+    import { links } from "svelte-routing";
 
     const menu = [
         {to: "/", text: 'Home'},
@@ -13,16 +13,8 @@
         <h6 class="pl-3 text-white tracking-widest font-thin text-lg">Fivelte</h6>
     </a>
     <Spacer />
-    <Tabs navigation items={menu}>
-            <span slot="item" let:item={item} let:color={color} class="cursor-pointer">
-                    <!--<NavLink to="{item.to}" let:isSelected={isSelected} >-->
-                              <TabButton
-                                      selected=false
-                                      text="{item.text}"
-                                      {color}
-                              >{item.text}</TabButton>
-                <!--</NavLink>
-                -->
-            </span>
-    </Tabs>
+    <div use:links>
+        <Tabs navigation items={menu}>
+        </Tabs>
+    </div>
 </AppBar>
